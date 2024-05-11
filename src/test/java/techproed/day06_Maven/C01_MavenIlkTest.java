@@ -33,7 +33,7 @@ public class C01_MavenIlkTest {
         driver.findElement(By.xpath("(//h2//a[1]")).click();
 
 
-        Thread.sleep(3000);
-        //driver.close();
+        Thread.sleep(4000);
+        driver.close();
     }
 }
