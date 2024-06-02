@@ -59,6 +59,7 @@ public class C01_ClassWork {
                     System.out.println("TEST PASSED");
             }else System.out.println("TEST FAILED");
             Thread.sleep(1000);
+
             driver.close();
     }
     }
