@@ -1,9 +1,7 @@
 package techrpoed.day07_MavenJUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -33,5 +31,15 @@ public class C03_BeforeAfter {
     @After
     public void tearDown() throws Exception {
         driver.close();
+    }
+
+    @BeforeClass
+    public static void beforeClass() throws Exception {
+        System.out.println("Her classtan once bir kez calisir");
+    }
+
+    @AfterClass
+    public static void afterClass() throws Exception {
+        System.out.println("Her classtan sonra bir kez calisir");
     }
 }
