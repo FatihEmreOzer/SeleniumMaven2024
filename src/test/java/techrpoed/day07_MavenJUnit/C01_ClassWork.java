@@ -58,7 +58,7 @@ public class C01_ClassWork {
             if (sonucYazisi.getText().equals("The payment was successfully submitted.")) {
                     System.out.println("TEST PASSED");
             }else System.out.println("TEST FAILED");
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
             driver.close();
     }
