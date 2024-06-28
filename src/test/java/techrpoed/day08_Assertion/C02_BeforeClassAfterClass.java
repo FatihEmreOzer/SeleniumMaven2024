@@ -17,7 +17,7 @@ public class C02_BeforeClassAfterClass {
 
     @Before
     public void setUp() throws Exception {
-        WebDriverManager.chromedriver().setup();
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1500));
