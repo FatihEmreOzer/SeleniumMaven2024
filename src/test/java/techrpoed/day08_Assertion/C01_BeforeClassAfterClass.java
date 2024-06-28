@@ -1,9 +1,6 @@
 package techrpoed.day08_Assertion;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.*;
 
 public class C01_BeforeClassAfterClass {
     @BeforeClass
@@ -24,5 +21,20 @@ public class C01_BeforeClassAfterClass {
     @After
     public void tearDown() throws Exception {
         System.out.println("Her methoddan sonra after methodu bir kez calisir");
+    }
+
+    @Test
+    public void test01() {
+        System.out.println("Test01 ethodu calisti");
+    }
+
+    @Test
+    public void test02() {
+        System.out.println("Test02 ethodu calisti");
+    }
+
+    @Test
+    public void test03() {
+        System.out.println("Test03 ethodu calisti");
     }
 }
