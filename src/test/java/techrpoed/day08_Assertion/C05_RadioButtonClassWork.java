@@ -39,7 +39,13 @@ public class C05_RadioButtonClassWork {
       driver.findElement(By.xpath("(//*[@role= 'button'])[2]")).click();
 
         //    "radio buttons" elementlerini locate edin
+        WebElement female = driver.findElement(By.xpath("(//*[@type = 'radio'])[1]"));
+        WebElement male = driver.findElement(By.xpath("(//*[@type = 'radio'])[2]"));
+        WebElement special = driver.findElement(By.xpath("(//*[@type = 'radio'])[3]"));
         //    Secili degilse cinsiyet butonuna size uygun olani secin
+        if (!male.isSelected()){
+            male.click();
+        }
 
 
     }
