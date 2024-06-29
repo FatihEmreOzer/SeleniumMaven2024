@@ -1,6 +1,7 @@
 package techrpoed.day08_Assertion;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -29,6 +30,11 @@ public class C05_RadioButtonClassWork {
 
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.close();
+    }
+
     @Test
     public void radioButton() {
 
@@ -46,6 +52,7 @@ public class C05_RadioButtonClassWork {
         if (!male.isSelected()){
             male.click();
         }
+
 
 
     }
