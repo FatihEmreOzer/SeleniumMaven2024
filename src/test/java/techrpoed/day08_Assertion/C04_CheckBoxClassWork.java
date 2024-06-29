@@ -1,6 +1,8 @@
 package techrpoed.day08_Assertion;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -29,9 +31,16 @@ public class C04_CheckBoxClassWork {
 
     }
 
+
+    @After
+    public void tearDown() throws Exception {
+        driver.close();
+    }
+
     @Test
-    public void checkBox() {
+    public void checkBox() throws InterruptedException {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
+        Thread.sleep(2000);
         //Checkbox1 ve checkbox2 elementlerini locate edin
         WebElement checkBox1 = driver.findElement(By.xpath("(//input)[1]"));
         WebElement checkBox2 = driver.findElement(By.xpath("(//input)[2]"));
@@ -39,9 +48,12 @@ public class C04_CheckBoxClassWork {
         if (!checkBox1.isSelected()){
             checkBox1.click();
         }
+        Thread.sleep(2000);
         //Checkbox2 secili degilse onay kutusuna tiklayin
         if (!checkBox2.isSelected()){
             checkBox2.click();
     }
+
+
 }
 }
