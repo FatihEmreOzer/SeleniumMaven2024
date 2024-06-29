@@ -40,7 +40,7 @@ public class C04_CheckBoxClassWork {
     @Test
     public void checkBox() throws InterruptedException {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         //Checkbox1 ve checkbox2 elementlerini locate edin
         WebElement checkBox1 = driver.findElement(By.xpath("(//input)[1]"));
         WebElement checkBox2 = driver.findElement(By.xpath("(//input)[2]"));
