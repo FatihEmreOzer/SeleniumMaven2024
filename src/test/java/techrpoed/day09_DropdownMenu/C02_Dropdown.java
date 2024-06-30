@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
@@ -66,13 +67,23 @@ public class C02_Dropdown {
         //1.Method
         //        a. Yil,ay,gun dropdown menulerini locate ediniz
         WebElement year = driver.findElement(By.xpath("//*[@id = 'year']"));
-        year.sendKeys("2021");
+        WebElement month = driver.findElement(By.xpath("//*[@id = 'month']"));
+        WebElement day = driver.findElement(By.xpath("//*[@id = 'day']"));
+
         //        b.Select objesi olusutr
+        Select select = new Select(year);
+
         //        c.Select object i kullanarak 3 farkli sekilde secim yapiniz
+        select.selectByIndex(6);
+        Select select1 = new Select(month);
+        select1.selectByValue("6");
+        Select select2 =new Select(day);
+        select2.selectByVisibleText("8");
     }
 
     @Test
     public void test02() {
+
 
     }
 
