@@ -1,6 +1,7 @@
 package techrpoed.day09_DropdownMenu;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -81,14 +82,24 @@ public class C02_Dropdown {
         select2.selectByVisibleText("8");
     }
 
+    //2.Method
+    //        a.Tum eyalet isimlerini yazdiralim
     @Test
     public void test02() {
-
-
+    WebElement states =  driver.findElement(By.xpath("(//select)[5]"));
+    Select select = new Select(states);
+    select.getOptions().forEach(w-> System.out.println(w.getText()));//getOptions ile List e assign etmeden yapabiliyoruz
     }
+
+// 3.Method:
+//        a. State dropdownindaki varsayilan secili secenegin 'Select a State ' oldugunu verify edelim
 
     @Test
     public void test03() {
-
+        WebElement states =  driver.findElement(By.xpath("(//select)[5]"));
+        Select select = new Select(states);
+        String seciliOlanSecenek = select.getFirstSelectedOption().getText();
+        System.out.println(seciliOlanSecenek);
+        Assert.assertEquals("Select a State",seciliOlanSecenek);
     }
 }
