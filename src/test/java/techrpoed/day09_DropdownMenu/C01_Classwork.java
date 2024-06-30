@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -38,20 +39,21 @@ public class C01_Classwork {
         String ActualTittle = driver.getTitle();
         String expectedTittle = "Amazon";
         Assert.assertTrue(ActualTittle.contains(expectedTittle));
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
 }
     //image Test --> Amazon resmini goruntulendigini test edin
     @Test
     public void imageTest() {
         WebElement image = driver.findElement(By.id("nav-logo-sprites"));
         Assert.assertTrue(image.isDisplayed());
-
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("samsung", Keys.ENTER);
     }
     //Search Box'in erisilebilir oldugunu test edin
     @Test
     public void searchBoxTest() {
         WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
         Assert.assertTrue(searchBox.isEnabled());
-
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("nokia", Keys.ENTER);
     }
     //    wrongTitleTest --> Sayfa Basliginin "amazon" icermedigini dogrulayin
     @Test
