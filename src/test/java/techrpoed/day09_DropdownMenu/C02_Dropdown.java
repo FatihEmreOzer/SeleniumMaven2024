@@ -2,7 +2,10 @@ package techrpoed.day09_DropdownMenu;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -54,6 +57,27 @@ public class C02_Dropdown {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
+
+    }
+
+    @Test
+    public void test01() {
+        //1.Method
+        //        a. Yil,ay,gun dropdown menulerini locate ediniz
+        WebElement year = driver.findElement(By.xpath("//*[@id = 'year']"));
+        year.sendKeys("2021");
+        //        b.Select objesi olusutr
+        //        c.Select object i kullanarak 3 farkli sekilde secim yapiniz
+    }
+
+    @Test
+    public void test02() {
+
+    }
+
+    @Test
+    public void test03() {
 
     }
 }
