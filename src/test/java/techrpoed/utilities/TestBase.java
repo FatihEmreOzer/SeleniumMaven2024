@@ -8,11 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class TestBase {
+public abstract class TestBase {
     /*
     TestBase classindan obje olusturmanin onune gecmek icin bu classi abstract yapabiliriz
+    Bu classa extends yaptigimiz test classlarindan ulasabiliriz
      */
-   WebDriver driver;
+   protected WebDriver driver;
     @Before
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -26,5 +27,11 @@ public class TestBase {
     public void tearDown() throws Exception {
         Thread.sleep(300);
         driver.quit();
+    }
+    public void bekle(int saniye){try {
+        Thread.sleep(saniye*1000);
+    }catch (InterruptedException e){
+        throw new RuntimeException(e);
+    }
     }
 }
