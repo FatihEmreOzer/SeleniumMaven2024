@@ -1,6 +1,7 @@
 package techrpoed.day09_DropdownMenu;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -101,5 +102,10 @@ public class C02_Dropdown {
         String seciliOlanSecenek = select.getFirstSelectedOption().getText();
         System.out.println(seciliOlanSecenek);
         Assert.assertEquals("Select a State",seciliOlanSecenek);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        driver.close();
     }
 }
